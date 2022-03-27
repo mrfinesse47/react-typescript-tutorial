@@ -1,7 +1,8 @@
-import React, { ReactNode, ReactElement } from "react";
+import React, { ReactNode, ReactElement, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { title } from "process";
+import { spawn } from "child_process";
 
 //conventional props
 
@@ -43,6 +44,28 @@ function Container({ heading, children }: ContainerProps): ReactElement {
 
 Container.defaultProps = defaultContainerProps;
 
+//functional props
+
+function TextWithNumber({
+  children,
+  header,
+}: {
+  children: (num: number) => ReactNode;
+  header?: (num: number) => ReactNode;
+}) {
+  const [state, setState] = React.useState<number>(1); //state is usually infered but if it is 2 types you can use the tag
+  return (
+    <div>
+      {header && <h2>{header?.(state)}</h2>}
+      {/* header is optional */}
+      <div>{children(state)}</div>
+      <div>
+        <button onClick={() => setState((state) => state + 1)}>Add</button>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div>
@@ -51,6 +74,12 @@ function App() {
         <strong>Hi</strong>
       </HeadingWithContent>
       <Container>Foo</Container>
+      <TextWithNumber header={(num: number) => <span>{num}</span>}>
+        {(num: number) => <div>Todays number is {num}</div>}
+      </TextWithNumber>
+      <TextWithNumber>
+        {(num: number) => <div>Todays number is {num}</div>}
+      </TextWithNumber>
     </div>
   );
 }
