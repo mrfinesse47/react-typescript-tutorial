@@ -3,6 +3,8 @@
 -from youtube
 https://www.youtube.com/watch?v=z8lDwLKthr8&ab_channel=JackHerrington
 
+went until 20:00 in this one
+
 # also mastering react hooks
 
 -again from youtube
