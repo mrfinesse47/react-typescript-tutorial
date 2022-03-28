@@ -1,7 +1,8 @@
 import UseStateComponent from "./UseStateComponent";
 import UseEffectComponent from "./UseEffectComponent";
 import UseContextComponent from "./UseContextComponent";
-import React from "react";
+
+import UseReducer from "./UseReducer";
 
 //hooks
 
@@ -12,6 +13,7 @@ const App = () => {
       <UseStateComponent />
       <UseEffectComponent />
       <UseContextComponent />
+      <UseReducer />
     </div>
   );
 };
