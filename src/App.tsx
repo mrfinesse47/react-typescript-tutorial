@@ -1,6 +1,7 @@
 import UseStateComponent from "./UseStateComponent";
 import UseEffectComponent from "./UseEffectComponent";
 import UseContextComponent from "./UseContextComponent";
+import UseRefComponent from "./UseRefComponent";
 
 import UseReducer from "./UseReducer";
 
@@ -14,6 +15,7 @@ const App = () => {
       <UseEffectComponent />
       <UseContextComponent />
       <UseReducer />
+      <UseRefComponent />
     </div>
   );
 };

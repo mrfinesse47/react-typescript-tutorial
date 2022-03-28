@@ -10,3 +10,7 @@ went until 20:00 in this one
 -again from youtube
 
 https://www.youtube.com/watch?v=zM_ZiSl2n2E
+
+## A nice cheatsheet
+
+https://github.com/typescript-cheatsheets/react
